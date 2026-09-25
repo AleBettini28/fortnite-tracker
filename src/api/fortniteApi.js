@@ -1,4 +1,6 @@
-const API_BASE = '/fortnite-api'
+const API_BASE = import.meta.env.DEV
+  ? '/fortnite-api'
+  : 'https://fortnite-api.com'
 
 function getApiKey() {
   return import.meta.env.VITE_FORTNITE_API_KEY?.trim() || ''
